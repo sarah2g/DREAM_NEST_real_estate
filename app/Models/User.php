@@ -16,6 +16,7 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+
     protected $fillable = [
         'name',
         'email',
@@ -23,6 +24,7 @@ class User extends Authenticatable
         'role',
         'phone',
     ];
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -40,14 +42,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
     public function properties()
     {
         return $this->hasMany(Property::class);
     }
+
     public function favorites()
     {
         return $this->belongsToMany(Property::class, 'favorites');
     }
+
     public function isAdmin()
     {
         return $this->role === 'admin';

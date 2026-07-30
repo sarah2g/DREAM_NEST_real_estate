@@ -24,12 +24,24 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $firstNames = ['Mohamed', 'Ahmed', 'Ali', 'Karim', 'Rachid', 'Farid', 'Nadir',
+            'Samir', 'Amine', 'Yacine', 'Fatima', 'Nadia', 'Sofia', 'Lamia',
+            'Karima', 'Yamina', 'Selma', 'Inès', 'Meriem', 'Houria',
+        ];
+
+        $lastNames = ['Benali', 'Khelifi', 'Mansouri', 'Tahar', 'Bouaziz', 'Hadj',
+            'Slimani', 'Djebbar', 'Mekki', 'Zerrouki', 'Ait', 'Ouali',
+            'Belkacem', 'Guerfi', 'Rahal', 'Said', 'Cherifi', 'Loucif',
+        ];
+
         return [
-            'name' => fake()->name(),
+            'name' => fake()->randomElement($firstNames).' '.fake()->randomElement($lastNames),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'role' => fake()->randomElement(['user', 'user', 'user', 'admin']),
+            'phone' => '+213 '.fake()->numberBetween(5, 7).fake()->numerify(' ## ## ## ##'),
         ];
     }
 

@@ -27,7 +27,7 @@ return new class extends Migration
             $table->boolean('is_featured')->default(false);
             $table->boolean('is_active')->default(true);
             $table->string('main_image')->nullable();
-            
+
             $table->timestamps();
         });
     }
