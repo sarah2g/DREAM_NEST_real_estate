@@ -116,138 +116,207 @@ nav {
   }
 }
 
-/* Styles for a container with flex layout, centered content, and a background image */
+/* ===== Hero Search Section ===== */
 .container1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   height: 100vh;
-  background: url('images/bg1.jpg') no-repeat; /* Set background image and properties */
-  background-size: cover; /* Ensure the background image covers the container */
+  background: url('images/bg1.jpg') no-repeat;
+  background-size: cover;
 }
 
-/* Media query for screens with a maximum width of 480px */
 @media only screen and (max-width: 480px) {
-  /* Apply styles when the screen width is 480 pixels or less */
-
-  /* Change the background image for the container on smaller screens */
   .container1 {
     background: url('images/bg1-mobile1.jpg') no-repeat;
+    background-size: auto;
+    height: 100vh;
   }
 }
-/* Styles for the root container */
+
 #root {
-  position: absolute; /* Set the container position to absolute */
-  top: 100%; /* Position it at the bottom of its containing element */
-  left: 50%; /* Position it horizontally in the center */
-  transform: translate(-50%, -50%); /* Center the container using a translation transform */
-  padding: 30px; /* Add padding inside the container */
-  display: flex; /* Use flexbox for layout */
-  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
-  height: 23%; /* Set the height of the container to 23% of the viewport height */
-  width: 90%; /* Set the width of the container to 90% of the viewport width */
-  box-shadow: 2px 2px 4px #100109; /* Add a subtle box shadow */
-  border-radius: 1rem; /* Apply border-radius for rounded corners */
-  background-color: rgba(49, 84, 134, 0.5); /* Background color with transparency */
-}
-/* Styles for the overall form */
-form {
-  width: 100%; /* Set the form width to 100% of its container */
-  display: grid; /* Use grid layout for the form */
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Create responsive grid columns, auto-fitting with a minimum of 180px and maximum of 1fr */
-  gap: 20px; /* Set the gap between grid items */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  padding: 30px 35px;
+  display: flex;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 92%;
+  max-width: 1100px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 10;
 }
 
-/* Styles for a specific form group within the form */
-form.group {
-  width: 100%; /* Set the width of the form group to 100% of its container */
-  position: relative; /* Enable positioning within the container */
-  display: flex; /* Use flex layout for the form group */
-  flex-direction: column; /* Arrange child elements in a column */
-  width: 100%; /* Ensure the width is 100% */
-  max-width: 200px; /* Set a maximum width for the form group */
-}
-/* Styles for a flexible form group */
-form.flex-group {
-  position: relative; /* Set the position property to relative */
-  display: grid; /* Use grid layout for the form group */
-  grid-template-columns: 1fr 1fr; /* Define two columns with equal width */
+#root form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  align-items: end;
 }
 
-/* Styles for input fields within the root container's form group */
-#root .group input {
-  padding: 10px; /* Set padding for the input fields */
-  border: none; /* Remove border from the input fields */
-  outline: none; /* Remove default focus outline */
-  border-bottom: 2px solid #e8dcdc; /* Add a bottom border with a specific color */
-  background-color: transparent; /* Set a transparent background for the input fields */
-  font-size: 20px; /* Set the font size for the input fields */
+#root .group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-/* General styles for text and select input fields */
-input[type=text], select {
-  width: 100%; /* Set the width to 100% for responsiveness */
-  padding: 10px 20px; /* Set padding for text and select input fields */
-  margin: 10px 0; /* Set margin for spacing */
-  display: block; /* Display as block elements */
-  border: 1px solid #ccc; /* Add a 1px solid border with a specific color */
-  border-radius: 4px; /* Add border-radius for rounded corners */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-/* Styles for labels within form groups */
+
 #root .group label {
-  font-size: 20px; /* Set the font size for labels */
-  color: #f4eded; /* Set the text color for labels */
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-/* Styles for labels within flexible form groups */
-#root .flex-group label {
-  font-size: 20px; /* Set the font size for labels within flexible form groups */
-  color: #fff; /* Set the text color for labels within flexible form groups */
+
+#root .group input,
+#root .group select {
+  padding: 10px 14px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #1a1a2e;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
-/* Styles for buttons */
-form .btn {
-  width: 100px; /* Set the width of the button */
-  height: 60px; /* Set the height of the button */
-  background-color: rgb(1, 23, 120); /* Set the background color of the button */
-  color: white; /* Set the text color of the button */
+
+#root .group input:focus,
+#root .group select:focus {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.3);
+}
+
+#root .group input::placeholder {
+  color: #999;
+}
+
+#root .flex {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#root .flex-col {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#root .flex-col input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+#root .flex-col input[type="radio"]:checked {
+  border-color: #fff;
+  background: #fff;
+}
+
+#root .flex-col input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background: #1e3a8a;
+  border-radius: 50%;
+}
+
+#root .flex-col label {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+#root .btn {
+  width: 100%;
+  height: 44px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px; /* Set the border radius for rounded corners */
-  border: none; /* Remove border from the button */
-  font-size: 20px; /* Set the font size for the button text */
-  transition: all 0.6s; /* Add a transition for a smooth effect on hover and other state changes */
-  cursor: pointer; /* Set the cursor to a pointer on hover */
+  gap: 8px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0 20px;
 }
-/* Hover styles for buttons */
-.form .btn:hover {
-  background-color: #564bec; /* Change background color on hover */
-  color: #c4b6b6; /* Change text color on hover */
-  font-size: 20px; /* Keep font size consistent on hover */
+
+#root .btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
 }
-/* Media query for screens with a maximum width of 480 pixels or less */
-@media only screen and (max-width: 480px) {
-  /* Adjust background size and height for smaller screens */
-  .container1 {
-    background-size: auto; /* Adjust background size for smaller screens */
-    height: 100vh; /* Set container height to 100% of the viewport height */
-  }
-  /* Adjust width, padding, and height for the root container on smaller screens */
+
+#root .btn:active {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
   #root {
-    width: 90%; /* Adjust width for smaller screens */
-    padding: 15px; /* Adjust padding for smaller screens */
-    height: 110%; /* Increase height for better visibility on smaller screens */
+    padding: 20px;
+    width: 94%;
+    transform: translate(-50%, -50%);
   }
-  /* Change to a single column layout for form groups on smaller screens */
-  form {
-    grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+
+  #root form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-  /* Remove max-width for form groups on smaller screens */
-  form.group {
-    max-width: none; /* Remove max-width for smaller screens */
+
+  #root .group label {
+    font-size: 12px;
   }
-  /* Make the button full width for better usability on smaller screens */
+
+  #root .group input,
+  #root .group select {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #root {
+    padding: 16px;
+    width: 96%;
+    height: auto;
+  }
+
+  #root form {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   #root .btn {
-    width: 100%; /* Make the button full width for smaller screens */
+    height: 42px;
+    font-size: 15px;
   }
 }
 /* ===== Favorites Section ===== */
@@ -391,6 +460,58 @@ form .btn {
     .for-text {
         font-size: 20px;
     }
+}
+
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pagination a {
+    color: #1e3a8a;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+}
+
+.pagination a:hover {
+    background: #1e3a8a;
+    color: #fff;
+    border-color: #1e3a8a;
+}
+
+.pagination .active span {
+    background: #1e3a8a;
+    color: #fff;
+    border: 1px solid #1e3a8a;
+}
+
+.pagination .disabled span {
+    color: #d1d5db;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    cursor: not-allowed;
 }
 
 /* Style for general button styling */
@@ -1172,7 +1293,7 @@ footer .bottom-details .bottom_text {
   margin-right: 10px; /* Set right margin to space out adjacent links */
 }
 .section--after-search {
-    padding-top: min(160px, 18vh);
+    padding-top: min(100px, 12vh);
 }
 
 /* ===== Category Grid Styles ===== */

@@ -14,8 +14,8 @@
         <div class="nav-link">
             <ul>
                 <li><a class="nav" href="{{ route('home') }}">HOME</a></li>
-                <li><a class="nav" href="{{ route('properties.sale') }}">SALES</a></li>
-                <li><a class="nav" href="{{ route('properties.rent') }}">RENTALS</a></li>
+                <li><a class="nav" href="{{ route('sale') }}">SALES</a></li>
+                <li><a class="nav" href="{{ route('rent') }}">RENTALS</a></li>
                 @if(Auth::check())
                     <li><a class="nav" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

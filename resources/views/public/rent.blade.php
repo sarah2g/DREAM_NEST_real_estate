@@ -10,9 +10,9 @@
             <p>Discover rental properties that suit your lifestyle</p>
         </div>
 
-        @if($properties->count() > 0)
+        @if($RentProperties->count() > 0)
             <div class="property-grid">
-                @foreach($properties as $property)
+                @foreach($RentProperties as $property)
                     <div class="property-card">
                         <div class="property-image">
                             <img src="{{ $property->main_image ? asset('storage/' . $property->main_image) : 'https://placehold.co/600x400/1e3a8a/ffffff?text=Dream+Nest' }}" alt="{{ $property->title }}">
@@ -33,15 +33,15 @@
                                     <span><i class="fas fa-vector-square"></i> {{ number_format($property->area, 0, ',', ' ') }} m²</span>
                                 @endif
                             </div>
-                            <a href="{{ route('properties.show', $property) }}" class="btn-details">Voir Détails</a>
+                            <a href="" class="btn-details">Voir Détails</a>
                         </div>
                     </div>
                 @endforeach
             </div>
 
-            @if(method_exists($properties, 'links'))
+            @if(method_exists($RentProperties, 'links'))
                 <div style="margin-top: 40px;">
-                    {{ $properties->links() }}
+                    {{ $RentProperties->links() }}
                 </div>
             @endif
         @else
