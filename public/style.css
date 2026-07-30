@@ -1,0 +1,1529 @@
+/* Resetting margin and padding for the entire page */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #6b88a7; /* Setting background color for the entire page */
+}
+/* Styling for header section with class 'header-A' */
+.header-A {
+  min-height: 100vh; /* Setting minimum height to cover the entire viewport */
+  width: 100%; /* Taking up the full width of the viewport */
+  background-image: url('images/bg7.jpg'); /* Setting background image for header-A */
+  background-position: center; /* Centering the background image */
+  background-size: cover; /* Ensuring the background image covers the entire header */
+  position: relative; /* Establishing a positioning context for child elements */
+}
+
+/* Styling for header section with class 'header-B' */
+.header-B {
+  min-height: 100vh; /* Setting minimum height to cover the entire viewport */
+  width: 100%; /* Taking up the full width of the viewport */
+  background-image: url('images/bg9.jpg'); /* Setting background image for header-B */
+  background-position: center; /* Centering the background image */
+  background-size: cover; /* Ensuring the background image covers the entire header */
+  position: relative; /* Establishing a positioning context for child elements */
+}
+/* Styling for the navigation bar */
+nav {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space evenly between items */
+  align-items: center; /* Center items vertically */
+  position: fixed; /* Fix the position so it stays in place */
+  z-index: 9; /* Set the z-index to ensure it appears above other elements */
+  backdrop-filter: blur(10px); /* Applying a blur effect to the background */
+  width: 100%; /* Full width */
+  height: 100px; /* Fixed height */
+  background-color: rgba(34, 109, 213, 0.5); /* Background color with transparency */
+}
+
+/* Styling for the logo within the navigation bar */
+.logo1 {
+  height: 130px;
+  width: 130px;
+  margin: 15px;
+  position: relative; /* Establishing a positioning context for child elements */
+}
+
+/* Styling for navigation links */
+.nav-link {
+  flex: 1; /* Flexible layout, taking up available space */
+  text-align: right; /* Aligning text to the right within the container */
+}
+
+/* Styling for the navigation links list */
+.nav-link ul li {
+  list-style: none; /* Removing default list styling */
+  display: inline-block; /* Displaying list items in a horizontal line */
+  padding: 2px 40px; /* Adding padding to each list item */
+  position: relative; /* Establishing a positioning context for child elements */
+  font-family: 'Nunito', sans-serif; /* Applying a specific font family */
+}
+
+/* Styling for the navigation links */
+.nav-link ul li a {
+  color: rgb(19, 0, 194); /* Setting the text color to white */
+  font-weight: 600; /* Applying a font weight of 600 */
+  font-size: 23px; /* Setting the font size to 23 pixels */
+  text-decoration: none; /* Removing underline from links */
+}
+
+/* Styling for the underline effect on hover */
+.nav-link ul li a::after {
+  content: ''; /* Creating an empty content pseudo-element */
+  width: 0%; /* Initially no width for the underline effect */
+  height: 4px; /* Setting the height of the underline */
+  background: #030b65; /* Setting the background color of the underline */
+  display: block; /* Displaying as a block-level element */
+  margin: auto; /* Centering the underline */
+  transition: 0.5s; /* Adding a smooth transition effect over 0.5 seconds */
+}
+
+/* Styling for the underline effect on navigation link hover */
+.nav-link ul li a:hover::after {
+  width: 100%; /* Enlarge the underline effect to cover the full width on hover */
+}
+/* Media query for screens with a maximum width of 480 pixels or less */
+@media screen and (max-width: 480px) {
+  /* Apply styles when the screen width is 480 pixels or less */
+  
+  /* Adjust the height of the navigation bar for smaller screens */
+  nav {
+    height: 135px;
+  }
+
+  /* Style for the logo when the screen is small */
+  .logo1 {
+    height: 130px;
+    width: 130px;
+    margin: 10px;
+  }
+
+  /* Center-align text in navigation links when the screen is small */
+  .nav-link {
+    text-align: right;
+  }
+
+  /* Style adjustments for list items in the navigation */
+  .nav-link ul li {
+    display: block; /* Display list items as block elements for stacking */
+    text-align: right; /* Center-align the list items */
+    padding: 5px 20px; /* Adjust padding for better spacing on small screens */
+  }
+
+  /* Reset the underline width for anchor links in navigation */
+  .nav-link ul li a::after {
+    width: 0%;
+  }
+}
+
+/* Styles for a container with flex layout, centered content, and a background image */
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('images/bg1.jpg') no-repeat; /* Set background image and properties */
+  background-size: cover; /* Ensure the background image covers the container */
+}
+
+/* Media query for screens with a maximum width of 480px */
+@media only screen and (max-width: 480px) {
+  /* Apply styles when the screen width is 480 pixels or less */
+
+  /* Change the background image for the container on smaller screens */
+  .container1 {
+    background: url('images/bg1-mobile1.jpg') no-repeat;
+  }
+}
+/* Styles for the root container */
+#root {
+  position: absolute; /* Set the container position to absolute */
+  top: 100%; /* Position it at the bottom of its containing element */
+  left: 50%; /* Position it horizontally in the center */
+  transform: translate(-50%, -50%); /* Center the container using a translation transform */
+  padding: 30px; /* Add padding inside the container */
+  display: flex; /* Use flexbox for layout */
+  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+  height: 23%; /* Set the height of the container to 23% of the viewport height */
+  width: 90%; /* Set the width of the container to 90% of the viewport width */
+  box-shadow: 2px 2px 4px #100109; /* Add a subtle box shadow */
+  border-radius: 1rem; /* Apply border-radius for rounded corners */
+  background-color: rgba(49, 84, 134, 0.5); /* Background color with transparency */
+}
+/* Styles for the overall form */
+form {
+  width: 100%; /* Set the form width to 100% of its container */
+  display: grid; /* Use grid layout for the form */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Create responsive grid columns, auto-fitting with a minimum of 180px and maximum of 1fr */
+  gap: 20px; /* Set the gap between grid items */
+}
+
+/* Styles for a specific form group within the form */
+form.group {
+  width: 100%; /* Set the width of the form group to 100% of its container */
+  position: relative; /* Enable positioning within the container */
+  display: flex; /* Use flex layout for the form group */
+  flex-direction: column; /* Arrange child elements in a column */
+  width: 100%; /* Ensure the width is 100% */
+  max-width: 200px; /* Set a maximum width for the form group */
+}
+/* Styles for a flexible form group */
+form.flex-group {
+  position: relative; /* Set the position property to relative */
+  display: grid; /* Use grid layout for the form group */
+  grid-template-columns: 1fr 1fr; /* Define two columns with equal width */
+}
+
+/* Styles for input fields within the root container's form group */
+#root .group input {
+  padding: 10px; /* Set padding for the input fields */
+  border: none; /* Remove border from the input fields */
+  outline: none; /* Remove default focus outline */
+  border-bottom: 2px solid #e8dcdc; /* Add a bottom border with a specific color */
+  background-color: transparent; /* Set a transparent background for the input fields */
+  font-size: 20px; /* Set the font size for the input fields */
+}
+/* General styles for text and select input fields */
+input[type=text], select {
+  width: 100%; /* Set the width to 100% for responsiveness */
+  padding: 10px 20px; /* Set padding for text and select input fields */
+  margin: 10px 0; /* Set margin for spacing */
+  display: block; /* Display as block elements */
+  border: 1px solid #ccc; /* Add a 1px solid border with a specific color */
+  border-radius: 4px; /* Add border-radius for rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+/* Styles for labels within form groups */
+#root .group label {
+  font-size: 20px; /* Set the font size for labels */
+  color: #f4eded; /* Set the text color for labels */
+}
+/* Styles for labels within flexible form groups */
+#root .flex-group label {
+  font-size: 20px; /* Set the font size for labels within flexible form groups */
+  color: #fff; /* Set the text color for labels within flexible form groups */
+}
+/* Styles for buttons */
+form .btn {
+  width: 100px; /* Set the width of the button */
+  height: 60px; /* Set the height of the button */
+  background-color: rgb(1, 23, 120); /* Set the background color of the button */
+  color: white; /* Set the text color of the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px; /* Set the border radius for rounded corners */
+  border: none; /* Remove border from the button */
+  font-size: 20px; /* Set the font size for the button text */
+  transition: all 0.6s; /* Add a transition for a smooth effect on hover and other state changes */
+  cursor: pointer; /* Set the cursor to a pointer on hover */
+}
+/* Hover styles for buttons */
+.form .btn:hover {
+  background-color: #564bec; /* Change background color on hover */
+  color: #c4b6b6; /* Change text color on hover */
+  font-size: 20px; /* Keep font size consistent on hover */
+}
+/* Media query for screens with a maximum width of 480 pixels or less */
+@media only screen and (max-width: 480px) {
+  /* Adjust background size and height for smaller screens */
+  .container1 {
+    background-size: auto; /* Adjust background size for smaller screens */
+    height: 100vh; /* Set container height to 100% of the viewport height */
+  }
+  /* Adjust width, padding, and height for the root container on smaller screens */
+  #root {
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 15px; /* Adjust padding for smaller screens */
+    height: 110%; /* Increase height for better visibility on smaller screens */
+  }
+  /* Change to a single column layout for form groups on smaller screens */
+  form {
+    grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+  }
+  /* Remove max-width for form groups on smaller screens */
+  form.group {
+    max-width: none; /* Remove max-width for smaller screens */
+  }
+  /* Make the button full width for better usability on smaller screens */
+  #root .btn {
+    width: 100%; /* Make the button full width for smaller screens */
+  }
+}
+/* ===== Favorites Section ===== */
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.form2 {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.for-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+.favorites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    min-height: 100px;
+}
+
+.favorite-item {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorite-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.favorite-item h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 6px 0;
+}
+
+.favorite-item p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 4px 0;
+}
+
+.favorite-item p:last-of-type {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.favorite-item .btn-details {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #1e3a8a;
+    color: #fff;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.favorite-item .btn-details:hover {
+    background: #2563eb;
+}
+
+#deletebutton {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#deletebutton button {
+    height: 40px;
+    width: auto;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#deletebutton button:hover {
+    background: #c0392b;
+}
+
+@media screen and (max-width: 768px) {
+    .container2 {
+        padding: 40px 15px;
+    }
+
+    .form2 {
+        padding: 25px;
+    }
+
+    .for-text {
+        font-size: 24px;
+    }
+
+    .favorites-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form2 {
+        padding: 20px;
+    }
+
+    .for-text {
+        font-size: 20px;
+    }
+}
+
+/* Style for general button styling */
+button {
+  height: 50px;                   /* Set the height of the button */
+  width: 100px;                   /* Set the width of the button */
+  text-align: center;             /* Center the text within the button */
+  font-size: 15px;                /* Set the font size of the button text */
+  color: #ffffff;                 /* Set the text color to white */
+  padding: 15px;                  /* Add padding around the button text */
+  border: 0;                      /* Remove the border */
+  outline: none;                  /* Remove the outline when the button is focused */
+  cursor: pointer;                /* Set a pointer cursor to indicate interactivity */
+  border-radius: 20px;            /* Add rounded corners to the button */
+  background-color: rgb(28, 28, 105); /* Set the background color of the button */
+}
+
+/* Hover effect for the general button */
+button:hover {
+  background-color: rgb(76, 76, 184); /* Change the background color on hover */
+  color: white;                      /* Change the text color on hover */
+}
+
+
+/* Set top padding for the container with class 'container4' */
+.container4 {
+  padding-top: 70px; /* Add top padding to the container */
+}
+
+/* Style for elements with class 'sale-font' */
+.sale-font {
+  color: white; /* Set the text color to white */
+  font-size: 200px; /* Set the font size for the h1 element */
+  margin: 100px; /* Add margin around the h1 element */
+  font-family: 'Nunito', sans-serif; /* Set the font family for the h1 element */
+}
+
+/* Style for elements with class 'description' */
+.description {
+  color: rgb(255, 255, 255); /* Set text color to white */
+  padding-left: 90px; /* Add left padding */
+  font-size: 22px; /* Set the font size */
+  font-weight: 500; /* Set font weight */
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  /* Adjust font size and margins for h1 elements with the class 'sale-font' on smaller screens */
+  .sale-font {
+    font-size: 110px; /* Adjust font size for smaller screens */
+    margin-top: 150px; /* Adjust top margin for smaller screens */
+    margin-left: 30px; /* Adjust left margin for smaller screens */
+  }
+
+  /* Adjust padding, font size, and text alignment for elements with the class 'description' on smaller screens */
+  .description {
+    padding-left: 20px; /* Adjust left padding for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+.container5 {
+  display: flex;                  /* Use flexbox for layout */
+  justify-content: center;        /* Center items along the main axis (horizontally) */
+  align-items: center;            /* Center items along the cross axis (vertically) */
+  margin: 30px 0;                  /* Add margin on the top and bottom of the container */
+}
+
+/* Styling for the gallery items (gallery-M) */
+.gallery-M {
+  width: 600px; 
+  height: 650px;                  /* Set a fixed width for each gallery item */
+  margin: 60px;                   /* Add margin around each gallery item */
+  box-sizing: border-box;         /* Include padding and border in the total width */
+  float: left;                    /* Float the items to the left to create a grid-like layout */
+  text-align: center;             /* Center the text within each gallery item */
+  border-radius: 20px;            /* Add rounded corners to the gallery items */
+  cursor: pointer;                /* Set a pointer cursor to indicate interactivity */
+  transition: -4s;                /*transition property with duration */
+  box-shadow: rgba(70, 70, 230, 0.25) 0px 50px 100px -20px, rgba(97, 65, 225, 0.3) 0px 30px 60px -30px, rgba(25, 114, 202, 0.35) 0px -2px 6px 0px inset;            /* Add a transition effect with a duration of -4 seconds (likely a typo, consider using a positive value) */
+  background: rgb(219, 217, 217, 0.6); /* Set the background color of the gallery items */
+}
+/* Hover effect for gallery items */
+.gallery-M:hover {
+  transform: translate(15px, -20px); /* Move the gallery item 15px to the right and 20px up on hover */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+/* Styling for gallery images */
+.imgM-G {
+  width: 500px;           /* Set the width of the gallery image */
+  height: 350px;          /* Set the height of the gallery image */
+  margin: 30px;           /* Add margin around the gallery image */
+  margin-bottom: 10px;    /* Add bottom margin to separate gallery images */
+}
+/* Styling for gallery image descriptions */
+.name-M {
+  padding: 4px;            /* Add padding around the gallery image description */
+  text-align: left;      /* Center the text within the gallery image description */
+  color: black;            /* Set the text color to black */
+  font-size: 15px;         /* Set the font size of the gallery image description */
+  text-align: justify; /* Set text alignment to justify */
+  font-weight: 400; /* Set the font weight to 400 (normal) */
+  margin-left: 10px; /* Set left margin to 10px */
+  margin-right: 10px; /* Set right margin to 10px */
+  margin-bottom: 20px;     /* Add bottom margin to separate the gallery image description from other elements */
+  font-family: 'Nunito', sans-serif ; /* Set the font family for the gallery image description */
+}
+/* Styling for the gallery button */
+.btnM-G {
+  text-align: center;            /* Center the text within the button */
+  font-size: 20px;               /* Set the font size of the button text */
+  color: #ffffff;                /* Set the text color to white */
+  width: 49%;                   /* Set the button width to 100% of its container */
+  padding: 15px;                 /* Add padding around the button text */
+  border: 0;                     /* Remove the border */
+  outline: none;                 /* Remove the outline when the button is focused */
+  cursor: pointer;               /* Set a pointer cursor to indicate interactivity */
+  margin: 0px;                   /* Remove any margin around the button */
+  border-radius: 20px;           /* Add rounded corners to the button */
+  background-color: rgb(28, 28, 105); /* Set the background color of the button */
+}
+
+/* Hover effect for the gallery button */
+.btnM-G:hover {
+  background-color: rgb(76, 76, 184); /* Change the background color on hover */
+  color: white;                       /* Change the text color on hover */
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  /* Adjust flex container properties for 'container5' on smaller screens */
+  .container5 {
+    flex-direction: column; /* Change the flex direction to column for smaller screens */
+    align-items: center; /* Center items horizontally in the container for smaller screens */
+  }
+
+  /* Adjust width, margin, and height for elements with the class 'gallery-M' on smaller screens */
+  .gallery-M {
+    width: 80%; /* Make each gallery item take full width for smaller screens */
+    margin: 50px 0; /* Adjust margin for smaller screens */
+    height: 30%; /* Adjust height for smaller screens */
+  }
+
+  /* Adjust margin, width, and height for elements with the class 'imgM-G' on smaller screens */
+  .imgM-G {
+    margin: 20px 0; /* Adjust margin for smaller screens */
+    width: 300px; /* Set the width for smaller screens */
+    height: 200px; /* Set the height for smaller screens */
+  }
+
+  /* Adjust width, padding for elements with the class 'btnM-G' on smaller screens */
+  .btnM-G {
+    width: 49%; /* Make the button take full width for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+.container6 {
+  display: flex;                  /* Use flexbox for layout */
+  justify-content: center;        /* Center items along the main axis (horizontally) */
+  align-items: center;            /* Center items along the cross axis (vertically) */
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  /* Adjust flex container properties for 'container6' on smaller screens */
+  .container6 {
+    flex-direction: column; /* Change the flex direction to column for smaller screens */
+    align-items: center; /* Center items horizontally in the container for smaller screens */
+  }
+}
+/* Define a CSS class named 'container10' for a flex container */
+.container10 {
+  display: flex; /* Use Flexbox to create a flex container */
+  align-items: center; /* Center items vertically in the container */
+  justify-content: center; /* Center items horizontally in the container */
+  height: 30vh; /* Set the height of the container to 30% of the viewport height */
+}
+
+/* Define a CSS class named 'form3' for styling a form */
+.form3 {
+  margin-top: 10px; /* Set a top margin for the form */
+  width: 90%; /* Set the width of the form to 90% */
+  padding: 10px; /* Add padding to the form */
+  border-radius: 20px; /* Add border-radius to create rounded corners for the form */
+  backdrop-filter: blur(5px); /* Apply a backdrop-filter with a blur effect to the form */
+  box-shadow: 2px 2px 4px #100109; /* Add a box shadow for a subtle lift effect */
+  background-color: rgba(49, 84, 134, 0.2); /* Set the background color with transparency (adjust the last value for transparency) */
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  /* Adjust height for 'container10' on smaller screens */
+  .container10 {
+    height: auto; /* Allow the container height to adjust automatically based on content */
+    height: 50vh; /* Set a specific height for the container on smaller screens */
+  }
+
+  /* Adjust margin and height for 'form3' on smaller screens */
+  .form3 {
+    margin-top: 10px; /* Adjust top margin for smaller screens */
+    height: 70%; /* Set the height of the form to 70% on smaller screens */
+  }
+
+  /* Adjust font size for elements with the class 'for-text' on smaller screens */
+  .for-text {
+    font-size: 25px; /* Adjust font size for smaller screens */
+  }
+
+  /* Adjust height and font size for all buttons on smaller screens */
+  button {
+    height: 45px; /* Adjust button height for smaller screens */
+    font-size: 13px; /* Adjust button font size for smaller screens */
+  }
+}
+.container7 {
+  padding-top: 70px;                     /* Add top padding to the container */
+}
+.rent-font {
+  color: white;                        /* Change the text color*/
+  font-size: 200px;                      /* Set the font size for the h1 element */
+  margin: 100px;                         /* Add margin around the h1 element */
+  font-family: 'Nunito', sans-serif          /* Set the font family for the h1 element */
+}
+@media only screen and (max-width:480px) {
+  .rent-font {
+      font-size: 110px; /* Adjust font size for smaller screens */
+      margin-top:200px; /* Adjust margin for smaller screens */
+      
+  }
+
+  .description {
+      padding-left: 20px; /* Adjust padding for smaller screens */
+      font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+/* Media query for smaller screens */
+@media only screen and (max-width:480px) {
+  .container7 {
+      padding-top: 40px; /* Adjust top padding for smaller screens */
+  }
+}
+.container8 {
+  display: flex;                  /* Use flexbox for layout */
+  justify-content:left;        /* Center items along the main axis (horizontally) */
+  align-items:left;            /* Center items along the cross axis (vertically) */
+  margin: 10px 0; /* Set margin-top and margin-bottom to 10px, and margin-left and margin-right to 0 */
+}
+.gallery-R{
+  display: flex;
+  width: 1430px; 
+  height:350px;                  /* Set a fixed width for each gallery item */
+  margin: 25px;                   /* Add margin around each gallery item */
+  box-sizing: border-box;         /* Include padding and border in the total width */
+  float: left;                    /* Float the items to the left to create a grid-like layout */
+  text-align:left;             /* Center the text within each gallery item */
+  border-radius: 20px;            /* Add rounded corners to the gallery items */
+  cursor: pointer;                /* Set a pointer cursor to indicate interactivity */
+  transition: -4s;                /* Add a transition effect with a duration of -4 seconds (likely a typo, consider using a positive value) */
+  box-shadow: rgba(70, 70, 230, 0.25) 0px 50px 100px -20px, rgba(97, 65, 225, 0.3) 0px 30px 60px -30px, rgba(25, 114, 202, 0.35) 0px -2px 6px 0px inset;            /* Add a transition effect with a duration of -4 seconds (likely a typo, consider using a positive value) */
+  background: rgb(219, 217, 217, 0.6); /* Set the background color of the gallery items */
+}
+.gallery-R:hover {
+  transform: translate(15px, -20px); /* Move the gallery item 15px to the right and 20px up on hover */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+  /* Styling for gallery images */
+/* Styling for gallery images */
+.imgR-R {
+  width: 600px;           /* Set the width of the gallery image */
+  height:300px;
+  margin: 20px;    /* Add bottom margin to separate gallery images */
+}
+.name-R {
+  padding: 4px;            /* Add padding around the gallery image description */
+  text-align: left;      /* Center the text within the gallery image description */
+  color: black;  
+  text-align: justify;          /* Set the text color to black */
+  font-size:15px;         /* Set the font size of the gallery image description */
+  font-weight:400;
+  margin-left: 10px;        /* Set the font weight to 600 (bold) */
+  margin-bottom: 20px;     /* Add bottom margin to separate the gallery image description from other elements */
+  font-family: 'Nunito', sans-serif ; /* Set the font family for the gallery image description */
+}
+.column-left {
+  flex: 1; /* Set flex property to 1, making the left column flexible within a flex container */
+}
+
+.column-right {
+  flex: 1; /* Set flex property to 1, making the right column flexible within a flex container */
+  padding: 0 20px; /* Adjust the padding as needed */
+}
+/* Styling for the gallery button */
+.btnR-R {
+  text-align: center;            /* Center the text within the button */
+  font-size: 20px;               /* Set the font size of the button text */
+  color: #ffffff;                /* Set the text color to white */
+  width:25%;                   /* Set the button width to 100% of its container */
+  padding: 15px;                 /* Add padding around the button text */
+  border: 0;                     /* Remove the border */
+  outline: none;                 /* Remove the outline when the button is focused */
+  cursor: pointer;               /* Set a pointer cursor to indicate interactivity */
+  margin: 0px;                   /* Remove any margin around the button */
+  border-radius: 20px;           /* Add rounded corners to the button */
+  background-color: rgb(28, 28, 105); /* Set the background color of the button */
+}
+
+/* Hover effect for the gallery button */
+.btnR-R:hover {
+  background-color: rgb(76, 76, 184); /* Change the background color on hover */
+  color: white;                       /* Change the text color on hover */
+}
+/* Media query for smaller screens */
+@media only screen and (max-width:480px) {
+  .container8 {
+      flex-direction: column; /* Change to a column layout for smaller screens */
+      align-items: center; /* Center items along the cross axis (vertically) */
+  }
+
+  .gallery-R {
+      width: 90%; /* Make the gallery items take full width for smaller screens */
+      height: 55%; /* Set the height of the gallery */
+  }
+  .imgR-R {
+    width: 250px;           /* Set the width of the gallery image */
+    height:300px;   /* Set the height of the gallery image */
+    margin:20px;    /* Add bottom margin to separate gallery images */
+  }
+  .name-R {
+    padding: 1px;            /* Add padding around the gallery image description */
+    font-size:11px;         /* Set the font size of the gallery image description */
+    font-weight:600;        /* Set the font weight to 600 (bold) */
+    margin-right:8px;        /* Set the font weight to 600 (bold) */
+    margin-bottom: 20px;     /* Add bottom margin to separate the gallery image description from other elements */
+  }
+  .column-left, .column-right {
+    flex: 50%; /* Make both columns take full width for smaller screens */
+    padding: 0 1px; /* Adjust the padding as needed */
+  }
+
+  .column-left {
+    margin-top:5px; /* Add margin between the columns */
+  }
+  .btnR-R {
+      width: 90%; /* Set the button width to 100% for smaller screens */
+      padding: 10px; /* Add padding to the button */
+      margin: 5px; /* Add margin to the button */
+  }
+}
+/* Define a CSS class named 'header-C' for a header container */
+.header-C {
+  min-height: 13vh; /* Setting minimum height to cover the entire viewport */
+  position: relative; /* Set the position property to relative for positioning context */
+}
+
+/* Define a CSS class named 'header-D' for styling an element within the header */
+.header-D {
+  width: 100%; /* Taking up the full width of the viewport */
+  height: 50%; /* Set the height of the element to 50% of its containing element */
+}
+/* Styling for the welcome text */
+/* Define a CSS class named 'container9' for a flex container */
+.container9 {
+  display: flex; /* Use Flexbox to create a flex container */
+  align-items: center; /* Center items vertically in the container */
+  justify-content: center; /* Center items horizontally in the container */
+  height: 154vh; /* Set the height of the container to 154% of the viewport height */
+}
+
+/* Styling for the welcome text content */
+.welcome-text9 {
+  /* Set the background color with alpha transparency */
+  background-color: rgba(255, 255, 255, 0.6);
+  /* Add top margin to the welcome text */
+  margin: 50px;
+  /* Add padding on top/bottom and left/right to the welcome text */
+  padding: 25px 25px;
+  /* Add border-radius to create rounded corners for the welcome text */
+  border-radius: 20px;
+  /* Add box shadow for a subtle lift effect */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* Styling for images */
+img {
+  vertical-align: middle; /* Align images vertically */
+  width: 100%; /* Set the width of the images to 100% */
+}
+
+/* Styling for slideshow navigation buttons */
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Styling for next & previous buttons */
+.prev,
+.next {
+  cursor: pointer; /* Set cursor to pointer for next & previous buttons */
+  position: absolute; /* Set position to absolute for absolute positioning */
+  top: 95%; /* Position the buttons 95% from the top */
+  width: auto; /* Set the width to auto */
+  padding: 16px; /* Add padding to the buttons */
+  margin-top: -50px; /* Adjust top margin for positioning */
+  color: white; /* Set text color to white */
+  font-weight: bold; /* Set font weight to bold */
+  font-size: 35px; /* Set font size to 35px */
+  user-select: none; /* Disable user selection */
+  -webkit-user-select: none; /* Disable user selection for WebKit browsers */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px; /* Add border-radius for styling */
+}
+
+/* Position the "previous button" to the left */
+.prev {
+  left: 0;
+  border-radius: 0px 5px 5px 0px; /* Add border-radius for styling */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(6, 1, 116, 0.5); /* Add a background color with alpha transparency on hover */
+}
+
+/* Styling for the number text (1/3 etc) */
+.numbertext {
+  color: rgba(6, 1, 116); /* Set text color for the number text */
+  font-size: 20px; /* Set font size for the number text */
+  font-weight: 600; /* Set font weight for the number text */
+  padding: 3px 12px; /* Add padding to the number text */
+}
+
+/* Styling for the row */
+.row:after {
+  content: ""; /* Clear floated elements after the row */
+  display: table; /* Set display property to table for clearing */
+  clear: both; /* Clear floats */
+}
+
+/* Styling for columns */
+/* Six columns side by side */
+.column {
+  float: left; /* Float the columns to the left */
+  width: 12.50%; /* Set the width of each column to 12.50% */
+}
+
+/* Styling for thumbnail images */
+/* Add a transparency effect for thumbnail images */
+.demo {
+  opacity: 0.2;
+}
+
+/* Styling for active and hovered thumbnails */
+.active,
+.demo:hover {
+  opacity: 1; /* Set opacity to 1 for active and hovered thumbnails */
+}
+/* Responsive styles for smaller screens */
+/* Media query for screens with a maximum width of 480px */
+@media screen and (max-width: 480px) {
+  /* Adjust height for elements with the class 'header-D' on smaller screens */
+  .header-D {
+    height: 50%; /* Adjust height for smaller screens */
+  }
+
+  /* Adjust height for elements with the class 'container9' on smaller screens */
+  .container9 {
+    height: 110vh; /* Adjust height for smaller screens */
+  }
+
+  /* Style adjustments for elements with the class 'welcome-text9' on smaller screens */
+  .welcome-text9 {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* Style adjustments for elements with the classes 'prev' and 'next' on smaller screens */
+  .prev,
+  .next {
+    font-size: 20px;
+    top: 75%; /* Adjust positioning for smaller screens */
+  }
+
+  /* Style adjustments for elements with the class 'numbertext' on smaller screens */
+  .numbertext {
+    font-size: 16px;
+    padding: 2px 8px;
+  }
+}
+
+/* Define a CSS class named 'container12' for a flex container */
+.container12 {
+  display: flex; /* Use Flexbox to create a flex container */
+  align-items: center; /* Center items vertically in the container */
+  justify-content: center; /* Center items horizontally in the container */
+  height: 130vh; /* Set the height of the container to 130% of the viewport height */
+}
+
+/* Media query for screens with a maximum width of 480px */
+@media screen and (max-width: 480px) {
+  /* Adjust height for elements with the class 'container12' on smaller screens */
+  .container12 {
+    height: 100vh; /* Adjust height for smaller screens, or set it to any value suitable for your design */
+  }
+}
+
+/* Styling for the main container */
+.container11 {
+  display: flex;                    /* Use flexbox for layout */
+  max-width: 1500px;                /* Set the maximum width for the container */
+  margin-left: auto;                /* Center the container horizontally */
+  margin-right: auto;
+  padding-right: 80px;              /* Add right padding to the container */
+  padding-top: 30px;                /* Add top padding to the container */
+  padding-bottom: 30px;             /* Add bottom padding to the container */
+  background-color: rgb(24, 24, 55);/* Set the background color of the container */
+}
+/* Styling for the welcome text */
+.welcome-text11 {
+  background-color: rgba(255, 255, 255, 0.738); /* Set the background color with alpha transparency */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 20px;
+  margin-top: 50px;                 /* Add top margin to the welcome text */
+  padding: 15px 25px;               /* Add padding on top/bottom and left/right to the welcome text */
+  margin-left: 50px;                /* Add left margin to the welcome text */
+}
+#welcome-text13 {
+  background-color: rgba(255, 255, 255, 0.738); /* Set the background color with alpha transparency */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 20px;
+  margin-top: 50px;                 /* Add top margin to the welcome text */
+  padding: 15px 25px;               /* Add padding on top/bottom and left/right to the welcome text */
+  margin-left: 50px;                /* Add left margin to the welcome text */
+  width: 93%;
+}
+@media screen and (max-width: 480px) {
+  #welcome-text13 {
+    width: 85%; /* Adjust the width for smaller screens */
+    margin: 20px auto; /* Center the element by setting auto margins */
+  }
+}
+@media screen and (max-width: 480px) {
+  #map iframe {
+    width: 65%; /* Adjust the width for smaller screens */
+    height:449px; /* Adjust the height for smaller screens */
+  }
+}
+/* Styling for h3 elements */
+h3 {
+  font-family: 'Nunito', sans-serif; /* Set the font family for h3 elements */
+  font-size: 25px; /* Set the font size for h3 elements */
+  font-weight: 600; /* Set the font weight for h3 elements */
+  text-align: justify; /* Justify the text for h3 elements */
+}
+
+/* Styling for elements with the class 'des' */
+.des {
+  font-family: 'Nunito', sans-serif; /* Set the font family for elements with the class 'des' */
+  font-size: 18px; /* Set the font size for elements with the class 'des' */
+  font-weight: 400; /* Set the font weight for elements with the class 'des' */
+  text-align: justify; /* Justify the text for elements with the class 'des' */
+}
+
+/* Styling for unordered lists */
+ul {
+  font-family: 'Nunito', sans-serif; /* Set the font family for unordered lists */
+  font-size: 17px; /* Set the font size for unordered lists */
+  font-weight: 400; /* Set the font weight for unordered lists */
+}
+
+/* Styling for h3 elements with a target attribute */
+h3[target] {
+  color: rgb(18, 18, 109); /* Set the text color for h3 elements with a target attribute */
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width:480px) {
+  .container11 {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding-right: 20px;    /* Adjust padding for smaller screens */
+  }
+
+  .welcome-text11 {
+    margin-left: 20px;      /* Adjust left margin for smaller screens */
+  }
+
+  h3 {
+    font-size: 20px;        /* Adjust font size for smaller screens */
+  }
+
+  .des {
+    font-size: 16px;        /* Adjust font size for smaller screens */
+  }
+
+  ul {
+    font-size: 15px;        /* Adjust font size for smaller screens */
+  }
+}
+/* Styling for the footer */
+footer {
+  /* Set background color with transparency */
+  background-color: rgba(6, 70, 160, 0.5);
+  width: 100%; /* Set the width of the footer to 100% */
+  border-top-left-radius: 30px;  /* Adjust the value based on your preference for the top-left corner */
+  border-top-right-radius: 30px; /* Adjust the value based on your preference for the top-right corner */
+}
+
+/* Styling for the top section of the footer */
+footer .container3 .top {
+  display: flex;
+  justify-content: space-between; /* Add space between items in the top section */
+}
+/* Styling for the logo details in the top section of .container3 */
+.container3 .top .logo-details {
+  color: #fff; /* Set the text color to white */
+  font-size: 30px; /* Set the font size to 30 pixels */
+  font-family: 'Nunito', sans-serif; /* Set the font family to 'Nunito', sans-serif */
+  margin: 10px 10px; /* Set margin (top and bottom 10px, left and right 10px) */
+}
+
+/* Styling for the media icons container in the top section of .container3 */
+.container3 .top .media-icons {
+  display: flex; /* Use Flexbox to create a flex container */
+}
+
+/* Styling for individual media icons in the top section of .container3 */
+.container3 .top .media-icons a {
+  height: 40px; /* Set the height of each icon to 40 pixels */
+  width: 40px; /* Set the width of each icon to 40 pixels */
+  margin: 10px 10px; /* Set margin (top and bottom 10px, left and right 10px) */
+  border-radius: 50%; /* Apply border-radius to create a circular shape */
+  text-align: center; /* Center the text inside the icon */
+  line-height: 40px; /* Set line height to vertically center the text */
+  color: #fff; /* Set the text color to white */
+  font-size: 17px; /* Set the font size to 17 pixels */
+  text-decoration: none; /* Remove default text decoration for links */
+  transition: all 0.4s ease; /* Add transition effect for a smooth hover effect */
+}
+/* Styling for the first media icon in the top section of the footer */
+.top .media-icons a:nth-child(1) {
+  background: #5582dc; /* Set background color for the first media icon */
+}
+
+/* Styling for the first media icon in the top section of the footer on hover */
+.top .media-icons a:nth-child(1):hover {
+  color: #5582dc; /* Change text color on hover for the first media icon */
+  background: #fff; /* Change background color on hover for the first media icon */
+}
+
+/* Styling for the second media icon in the top section of the footer */
+.top .media-icons a:nth-child(2) {
+  background: #188dd5; /* Set background color for the second media icon */
+}
+
+/* Styling for the second media icon in the top section of the footer on hover */
+.top .media-icons a:nth-child(2):hover {
+  color: #188dd5; /* Change text color on hover for the second media icon */
+  background: #fff; /* Change background color on hover for the second media icon */
+}
+
+/* Styling for the third media icon in the top section of the footer */
+.top .media-icons a:nth-child(3) {
+  background: #1244a8; /* Set background color for the third media icon */
+}
+
+/* Styling for the third media icon in the top section of the footer on hover */
+.top .media-icons a:nth-child(3):hover {
+  color: #1244a8; /* Change text color on hover for the third media icon */
+  background: #fff; /* Change background color on hover for the third media icon */
+}
+
+/* Styling for the fourth media icon in the top section of the footer */
+.top .media-icons a:nth-child(4) {
+  background: #005e91; /* Set background color for the fourth media icon */
+}
+
+/* Styling for the fourth media icon in the top section of the footer on hover */
+.top .media-icons a:nth-child(4):hover {
+  color: #005e91; /* Change text color on hover for the fourth media icon */
+  background: #fff; /* Change background color on hover for the fourth media icon */
+}
+/* Styling for the link boxes section in the footer */
+footer .container3 .link-boxes {
+  width: 100%; /* Set the width of the link boxes section to 100% */
+  display: flex; /* Use Flexbox to create a flex container */
+  justify-content: space-between; /* Distribute space evenly between link boxes */
+}
+
+/* Styling for individual link boxes in the footer */
+footer .container3 .link-boxes .box {
+  width: calc(100% / 5 - 10px); /* Calculate the width for each link box, considering margins */
+}
+
+/* Styling for the link name in each link box */
+.container3 .link-boxes .box .link_name {
+  color: #000000; /* Set the text color for the link name */
+  font-size: 22px; /* Set the font size for the link name */
+  font-weight: 600; /* Set the font weight for the link name */
+  margin-bottom: 10px; /* Add bottom margin to the link name */
+  font-family: 'Nunito', sans-serif; /* Set the font family for the link name */
+  position: relative; /* Set the position to relative for positioning the pseudo-element */
+}
+
+/* Styling for the pseudo-element (::before) in the link name */
+.link-boxes .box .link_name::before {
+  content: ''; /* Set content to an empty string for pseudo-element */
+  position: absolute; /* Set the position to absolute for precise placement */
+  bottom: -2px; /* Position the pseudo-element below the link name */
+  height: 4px; /* Set the height of the pseudo-element */
+  width: 60px; /* Set the width of the pseudo-element */
+  background: #030b65; /* Set the background color of the pseudo-element */
+}
+/* Styling for list items within link boxes in container3 */
+.container3 .link-boxes .box li {
+  margin: 6px 0; /* Set margin for list items within link boxes */
+  list-style: none; /* Remove default list styling */
+}
+
+/* Styling for anchor links within list items in link boxes */
+.container3 .link-boxes .box li a {
+  color: #000000; /* Set text color for anchor links */
+  font-family: 'Nunito', sans-serif; /* Set font family for anchor links */
+  font-size: 16px; /* Set font size for anchor links */
+  font-weight: 700; /* Set font weight for anchor links */
+  text-decoration: none; /* Remove default text decoration for anchor links */
+}
+
+/* Styling for anchor links within list items in link boxes on hover */
+.container3 .link-boxes .box li a:hover {
+  text-decoration: underline; /* Add underline on hover for anchor links */
+}
+
+/* Styling for the input box within link boxes */
+.container3 .link-boxes .input-box {
+  margin-right: 55px; /* Set right margin for the input box */
+}
+
+/* Styling for general link boxes in container3 */
+.link-boxes {
+  color: #000000; /* Set text color for link boxes */
+  font-size: 16px; /* Set font size for link boxes */
+  font-weight: 600; /* Set font weight for link boxes */
+  margin: 4px 0; /* Set margin for link boxes */
+  font-family: 'Nunito', sans-serif; /* Set font family for link boxes */
+}
+/* Styling for the bottom details section of the footer */
+footer .bottom-details {
+  width: 100%;
+  background: #0F0844; /* Set the background color for the bottom details section */
+}
+
+/* Styling for the text within the bottom details section */
+footer .bottom-details .bottom_text {
+  max-width: 1250px; /* Set the maximum width of the text container */
+  margin: auto; /* Center the text container horizontally */
+  padding: 20px 40px; /* Add padding to the text container */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out the content evenly */
+}
+
+/* Styling for text and links within the bottom details section */
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a {
+  font-size: 14px; /* Set the font size for text and links */
+  font-weight: 300; /* Set the font weight for text and links */
+  color: #fff; /* Set the text color to white */
+  opacity: 0.8; /* Set initial opacity for a slightly transparent effect */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+/* Styling for link hover effect within the bottom details section */
+.bottom-details .bottom_text a:hover {
+  opacity: 1; /* Increase opacity on hover for a clearer appearance */
+  text-decoration: underline; /* Add underline on hover for links */
+}
+
+/* Styling for spacing between links in the bottom details section */
+.bottom-details .bottom_text a {
+  margin-right: 10px; /* Set right margin to space out adjacent links */
+}
+.section--after-search {
+    padding-top: min(160px, 18vh);
+}
+
+/* ===== Category Grid Styles ===== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.15);
+    border-color: #1e3a8a;
+}
+
+.category-card a {
+    text-decoration: none;
+    display: block;
+}
+
+.category-card h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.category-card:hover h3 {
+    color: #1e3a8a;
+}
+
+@media screen and (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .category-card {
+        padding: 22px 12px;
+    }
+
+    .category-card h3 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category-card {
+        padding: 18px 10px;
+        border-radius: 12px;
+    }
+}
+/* ===== Property Cards Styles ===== */
+.section {
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: #666;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.property-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.property-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.08);
+}
+
+.property-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.property-badge.sale {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.property-badge.rent {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.property-favorite {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.property-favorite:hover,
+.property-favorite.active {
+    color: #e74c3c;
+    background: #fff;
+}
+
+.property-details {
+    padding: 20px;
+}
+
+.property-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.property-location {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.property-location::before {
+    content: '\f3c5';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #1e3a8a;
+}
+
+.property-price {
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.property-meta {
+    display: flex;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.property-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.property-meta i {
+    color: #1e3a8a;
+    font-size: 14px;
+}
+
+.btn-details {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: #fff;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-details:hover {
+    background: #2563eb;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #888;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .property-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .property-title {
+        font-size: 18px;
+    }
+
+    .property-price {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .property-image {
+        height: 200px;
+    }
+}
+/* Media query for smaller screens */
+@media only screen and (max-width:480px) {
+  /* Adjust layout for the top section of the footer on smaller screens */
+  footer .container3 .top {
+      flex-direction: column; /* Change flex direction to column for smaller screens */
+      align-items: center; /* Center items horizontally in the container for smaller screens */
+      text-align: center; /* Center text within the top section for smaller screens */
+  }
+
+  /* Adjust margin for media icons in the top section on smaller screens */
+  .container3 .top .media-icons {
+      margin-top: 20px; /* Add margin on top for spacing on smaller screens */
+  }
+
+  /* Adjust layout for link boxes in the footer on smaller screens */
+  .container3 .link-boxes {
+      flex-direction: column; /* Change flex direction to column for link boxes on smaller screens */
+  }
+
+  /* Adjust width and margin for individual link boxes on smaller screens */
+  .container3 .link-boxes .box {
+      width: 100%; /* Set the width to 100% for full width on smaller screens */
+      margin-bottom: 20px; /* Add margin at the bottom for spacing on smaller screens */
+  }
+}

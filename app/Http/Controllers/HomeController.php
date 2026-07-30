@@ -15,8 +15,9 @@ class HomeController extends Controller
         $lastProperties = Property::where('is_active', true)->latest()->take(6)->get();
         $featuredProperties = Property::where('is_featured', true)->latest()->take(6)->get();
         $categories = Category::all();
-        $favoriteProperties = Favorite::where('user_id', Auth::id())->pluck('property_id')->toArray();
+        $favoritePropertyIds = Favorite::where('user_id', Auth::id())->pluck('property_id');
+        $favoriteProperties = Property::whereIn('id', $favoritePropertyIds)->get();
 
-        return view('home', compact('lastProperties', 'featuredProperties', 'categories', 'favoriteProperties'));
+        return view('public.search', compact('lastProperties', 'featuredProperties', 'categories', 'favoriteProperties'));
     }
 }
