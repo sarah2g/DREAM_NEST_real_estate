@@ -7,7 +7,10 @@
     </div>
     <div class="property-details">
         <h3 class="property-title">{{ $property->title }}</h3>
-        <p class="property-location">{{ $property->city }}{{ $property->state ? ', ' . $property->state : '' }}</p>
+        <p class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            {{ $property->city }}{{ $property->state ? ', ' . $property->state : '' }}
+        </p>
         <p class="property-price">{{ number_format($property->price, 0, ',', ' ') }} DZD</p>
         <div class="property-meta">
             @if($property->bedrooms)
@@ -20,6 +23,20 @@
                 <span><i class="fas fa-vector-square"></i> {{ number_format($property->area, 0, ',', ' ') }} m²</span>
             @endif
         </div>
-        <a href="" class="btn-details">Voir Détails</a>
+        <div class="property-actions">
+            <a href="{{ route('property.show', $property->id) }}" class="btn-details">Voir Détails</a>
+            @php
+                $isFavorite = Auth::check() && $property->isFavoritedBy(Auth::id());
+            @endphp
+            <form action="{{ $isFavorite ? route('property.cancelfavorite', $property->id) : route('property.favorite', $property->id) }}" method="POST" class="favorite-form">
+                @csrf
+                @if($isFavorite)
+                    @method('DELETE')
+                @endif
+                <button type="submit" class="btn-favorite {{ $isFavorite ? 'active' : '' }}" title="{{ $isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </form>
+        </div>
     </div>
 </div>

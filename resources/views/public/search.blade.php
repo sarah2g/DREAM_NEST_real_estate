@@ -175,7 +175,12 @@
                         <h3>{{ $property->title }}</h3>
                         <p>{{ $property->city }}{{ $property->state ? ', ' . $property->state : '' }}</p>
                         <p>{{ number_format($property->price, 0, ',', ' ') }} DZD</p>
-                        <a href="" class="btn-details">Voir Détails</a>
+                        <a href="{{ route('property.show', $property->id) }}" class="btn-details">Voir Détails</a>
+                        <form action="{{ route('property.cancelfavorite', $property->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-remove">Remove from Favorites</button>
+                        </form>
                     </div>
                 @endforeach
             @else

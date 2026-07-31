@@ -46,8 +46,10 @@ slides[slideIndex - 1].style.display = "block";
 // Add "active" class to the dot corresponding to the current slide
 dots[slideIndex - 1].className += " active";
 
-// Set the caption text to the alt text of the current slide's dot
-captionText.innerHTML = dots[slideIndex - 1].alt;
+// Set the caption text to the alt text of the current slide's dot (if a caption element exists)
+if (captionText) {
+  captionText.innerHTML = dots[slideIndex - 1].alt;
+}
 }
  // Declare an empty array to store favorite properties
 const favoritesList = [];

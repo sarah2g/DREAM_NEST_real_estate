@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sale', [PropertyController::class, 'sale'])->name('sale');
 Route::get('/rent', [PropertyController::class, 'rent'])->name('rent');
+Route::get('/property/{property}', [PropertyController::class, 'show'])->name('property.show');
+Route::post('/property/{property}/favorite', [PropertyController::class, 'makefavorites'])->middleware('auth')->name('property.favorite');
+Route::delete('/property/{property}/favorite', [PropertyController::class, 'cancelfavorites'])->middleware('auth')->name('property.cancelfavorite');
 Route::get('/dashboard', function () {
+
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
