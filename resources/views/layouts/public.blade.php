@@ -24,7 +24,7 @@
                 @endif
                
                 @if (Auth::check() && Auth::user()->isAdmin())
-                    <li><a class="nav" href="{{ route('dashboard') }}">DASHBOARD</a></li>
+                    <li><a class="nav" href="{{ route('admin.index') }}">DASHBOARD</a></li>
                 @endif
                 
                
