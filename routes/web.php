@@ -32,6 +32,11 @@ Route::middleware(['auth', 'admin'])
         Route::put('/admin/properties/{property}', [adminPropertyController::class, 'update'])->name('admin.properties.update');
         Route::delete('/admin/properties/{property}', [adminPropertyController::class, 'destroy'])->name('admin.properties.destroy');
         Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
+        Route::get('/admin/users/add', [UserController::class, 'addUser'])->name('admin.users.add');
+        Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+        Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+        Route::put('/admin/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+        Route::delete('/admin/users/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
         Route::get('/admin/categories', [CategoryController::class, 'index'])->name('admin.categories');
         Route::get('/admin/categories/add', [CategoryController::class, 'addCategory'])->name('admin.categories.add');
         Route::post('/admin/categories', [CategoryController::class, 'store'])->name('admin.categories.store');

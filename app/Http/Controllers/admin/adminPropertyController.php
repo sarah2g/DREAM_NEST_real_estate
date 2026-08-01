@@ -80,14 +80,14 @@ class adminPropertyController extends Controller
                 'status' => $validated['status'],
                 'is_featured' => $request->boolean('is_featured'),
                 'is_active' => $request->boolean('is_active'),
-                'main_image' => $mainImagePath ? basename($mainImagePath) : null,
+                'main_image' => $mainImagePath,
             ]
         );
 
         if ($request->hasFile('additional_images')) {
             foreach ($request->file('additional_images') as $image) {
                 $path = $image->store('property_images', 'public');
-                $property->images()->create(['image_path' => basename($path)]);
+                $property->images()->create(['image_path' => $path]);
             }
         }
 
@@ -144,16 +144,16 @@ class adminPropertyController extends Controller
             $mainImagePath = $request->file('main_image')->store('property_images', 'public');
 
             if ($property->main_image) {
-                Storage::disk('public')->delete('property_images/'.$property->main_image);
+                Storage::disk('public')->delete($property->main_image);
             }
 
-            $property->main_image = basename($mainImagePath);
+            $property->main_image = $mainImagePath;
         }
 
         if ($request->hasFile('additional_images')) {
             foreach ($request->file('additional_images') as $image) {
                 $path = $image->store('property_images', 'public');
-                $property->images()->create(['image_path' => basename($path)]);
+                $property->images()->create(['image_path' => $path]);
             }
         }
 
@@ -167,11 +167,11 @@ class adminPropertyController extends Controller
         $property = Property::findOrFail($id);
 
         if ($property->main_image) {
-            Storage::disk('public')->delete('property_images/'.$property->main_image);
+            Storage::disk('public')->delete($property->main_image);
         }
 
         foreach ($property->images as $image) {
-            Storage::disk('public')->delete('property_images/'.$image->image_path);
+            Storage::disk('public')->delete($image->image_path);
             $image->delete();
         }
 

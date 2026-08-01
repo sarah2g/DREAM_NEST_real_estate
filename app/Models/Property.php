@@ -11,6 +11,7 @@ class Property extends Model
 
     protected $fillable = [
         'title',
+        'user_id',
         'category_id',
         'description',
         'price',
