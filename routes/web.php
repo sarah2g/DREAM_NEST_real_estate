@@ -33,6 +33,11 @@ Route::middleware(['auth', 'admin'])
         Route::delete('/admin/properties/{property}', [adminPropertyController::class, 'destroy'])->name('admin.properties.destroy');
         Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
         Route::get('/admin/categories', [CategoryController::class, 'index'])->name('admin.categories');
+        Route::get('/admin/categories/add', [CategoryController::class, 'addCategory'])->name('admin.categories.add');
+        Route::post('/admin/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
+        Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+        Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
     });
 
 require __DIR__.'/auth.php';
