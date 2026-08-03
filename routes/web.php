@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\adminController;
 use App\Http\Controllers\admin\adminPropertyController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ContactController as AdminContactController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
@@ -48,6 +49,9 @@ Route::middleware(['auth', 'admin'])
         Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
         Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
         Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+        Route::get('/admin/contacts', [AdminContactController::class, 'index'])->name('admin.contacts');
+        Route::patch('/admin/contacts/{contact}', [AdminContactController::class, 'markAsRead'])->name('admin.contacts.read');
+        Route::delete('/admin/contacts/{contact}', [AdminContactController::class, 'destroy'])->name('admin.contacts.destroy');
     });
 
 require __DIR__.'/auth.php';

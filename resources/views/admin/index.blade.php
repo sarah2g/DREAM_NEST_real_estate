@@ -16,7 +16,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-600 dark:to-indigo-700 rounded-xl shadow-md p-6 flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-blue-100">{{ __('Properties') }}</p>
@@ -50,6 +50,21 @@
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 dark:from-emerald-600 dark:to-teal-700 rounded-xl shadow-md p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-emerald-100">{{ __('Messages') }}</p>
+                        <p class="mt-2 text-4xl font-extrabold text-white">{{ $nombreContact }}</p>
+                        @if ($unreadMessages > 0)
+                            <p class="mt-1 text-xs font-medium text-emerald-100">{{ __(':count unread', ['count' => $unreadMessages]) }}</p>
+                        @endif
+                    </div>
+                    <div class="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                         </svg>
                     </div>
                 </div>

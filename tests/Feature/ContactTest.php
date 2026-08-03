@@ -50,3 +50,47 @@ test('contact message requires name, email and message', function () {
 
     $this->assertDatabaseCount('contacts', 0);
 });
+
+test('admin can view contact messages', function () {
+    $admin = User::factory()->create(['role' => 'admin']);
+    Contact::factory()->create(['name' => 'Test User', 'message' => 'Hello admin']);
+
+    actingAs($admin)
+        ->get(route('admin.contacts'))
+        ->assertOk()
+        ->assertSee('Test User')
+        ->assertSee('Hello admin');
+});
+
+test('non-admin users cannot view contact messages', function () {
+    $user = User::factory()->create();
+
+    actingAs($user)
+        ->get(route('admin.contacts'))
+        ->assertRedirect();
+});
+
+test('admin can toggle a message read status', function () {
+    $admin = User::factory()->create(['role' => 'admin']);
+    $contact = Contact::factory()->create(['is_read' => false]);
+
+    actingAs($admin)
+        ->patch(route('admin.contacts.read', $contact->id))
+        ->assertRedirect()
+        ->assertSessionHas('success');
+
+    expect($contact->fresh()->is_read)->toBeTrue();
+});
+
+test('admin can delete a contact message', function () {
+    $admin = User::factory()->create(['role' => 'admin']);
+    $contact = Contact::factory()->create();
+
+    actingAs($admin)
+        ->delete(route('admin.contacts.destroy', $contact->id))
+        ->assertRedirect()
+        ->assertSessionHas('success');
+
+    expect(Contact::find($contact->id))->toBeNull();
+});
+

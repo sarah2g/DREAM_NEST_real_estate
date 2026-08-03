@@ -16,6 +16,18 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                @if (Auth::user()->isAdmin())
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.contacts')" :active="request()->routeIs('admin.contacts')">
+                            {{ __('Messages') }}
+                            @if ($unreadMessagesCount > 0)
+                                <span class="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300">
+                                    {{ $unreadMessagesCount }}
+                                </span>
+                            @endif
+                        </x-nav-link>
+                    </div>
+                @endif
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
