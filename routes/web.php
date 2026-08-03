@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\adminController;
 use App\Http\Controllers\admin\adminPropertyController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
@@ -15,6 +16,10 @@ Route::get('/rent', [PropertyController::class, 'rent'])->name('rent');
 Route::get('/property/{property}', [PropertyController::class, 'show'])->name('property.show');
 Route::post('/property/{property}/favorite', [PropertyController::class, 'makefavorites'])->middleware('auth')->name('property.favorite');
 Route::delete('/property/{property}/favorite', [PropertyController::class, 'cancelfavorites'])->middleware('auth')->name('property.cancelfavorite');
+
+Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact')->middleware('auth');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store')->middleware('auth');
+
 Route::get('/admin', [adminController::class, 'index'])->middleware('auth')->name('admin.index');
 
 Route::middleware('auth')->group(function () {

@@ -58,6 +58,13 @@
                 <h3 target>Description</h3>
                 <p class="des">{{ $property->description }}</p>
             </div>
+            <!-- contacter pour cette propriété button -->
+            <div class="welcome-text11">
+                <a href="{{ route('contact', ['property_id' => $property->id])
+    }}" class="btn btn-primary">Contacter pour cette propriété</a>
+            </div>
+       
+
             <div id="welcome-text13">
                 <div id="map">
                     <iframe
